@@ -30,10 +30,10 @@ class MainActivity : AppCompatActivity() {
                 object : ViewPager2.OnPageChangeCallback() {
                     override fun onPageSelected(position: Int) {
                         when (position){
-                            0 -> bottomNavigation.show(ID_HOME)
-                            1 -> bottomNavigation.show(ID_TRANSACTIONS)
-                            2 -> bottomNavigation.show(ID_STATISTICS)
-                            3 -> bottomNavigation.show(ID_ACCOUNT)
+                            0 -> bottomNavigation.show(ID_HOME,true)
+                            1 -> bottomNavigation.show(ID_TRANSACTIONS,true)
+                            2 -> bottomNavigation.show(ID_STATISTICS,true)
+                            3 -> bottomNavigation.show(ID_ACCOUNT,true)
                         }
                     }
                 }
@@ -49,11 +49,11 @@ class MainActivity : AppCompatActivity() {
             add(SSCustomBottomNavigation.Model(ID_ACCOUNT,R.drawable.ic_account,"Account"))
             setOnShowListener {
                 when (it.id) {
-                    ID_HOME -> mainViewPager.currentItem = 0
-                    ID_TRANSACTIONS -> mainViewPager.currentItem = 1
-                    ID_STATISTICS -> mainViewPager.currentItem = 2
-                    ID_ACCOUNT -> mainViewPager.currentItem = 3
-                    else -> mainViewPager.currentItem = 0
+                    ID_HOME -> mainViewPager.setCurrentItem(0,true)
+                    ID_TRANSACTIONS -> mainViewPager.setCurrentItem(1,true)
+                    ID_STATISTICS -> mainViewPager.setCurrentItem(2,true)
+                    ID_ACCOUNT -> mainViewPager.setCurrentItem(3,true)
+                    else -> mainViewPager.setCurrentItem(0,true)
                 }
 
                 val bgColor = when (it.id) {
@@ -67,12 +67,11 @@ class MainActivity : AppCompatActivity() {
 
             }
             setOnClickMenuListener {
-                val name = when (it.id) {
-                    ID_HOME -> "HOME"
-                    ID_TRANSACTIONS -> "TRANSACTIONS"
-                    ID_STATISTICS -> "STATISTICS"
-                    ID_ACCOUNT -> "ACCOUNT"
-                    else -> ""
+                  when (it.id) {
+                    ID_HOME -> mainViewPager.currentItem = 0
+                    ID_TRANSACTIONS -> mainViewPager.currentItem = 1
+                    ID_STATISTICS -> mainViewPager.currentItem = 2
+                    ID_ACCOUNT -> mainViewPager.currentItem = 3
                 }
             }
 

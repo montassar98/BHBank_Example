@@ -50,9 +50,9 @@ class MainActivity : AppCompatActivity() {
             setOnShowListener {
                 when (it.id) {
                     ID_HOME -> mainViewPager.setCurrentItem(0,true)
-                    ID_TRANSACTIONS -> mainViewPager.setCurrentItem(2,true)
-                    ID_STATISTICS -> mainViewPager.setCurrentItem(3,true)
-                    ID_ACCOUNT -> mainViewPager.setCurrentItem(4,true)
+                    ID_TRANSACTIONS -> mainViewPager.setCurrentItem(1,true)
+                    ID_STATISTICS -> mainViewPager.setCurrentItem(2,true)
+                    ID_ACCOUNT -> mainViewPager.setCurrentItem(3,true)
                     else -> mainViewPager.setCurrentItem(0,true)
                 }
 
@@ -67,12 +67,11 @@ class MainActivity : AppCompatActivity() {
 
             }
             setOnClickMenuListener {
-                val name = when (it.id) {
-                    ID_HOME -> "HOME"
-                    ID_TRANSACTIONS -> "TRANSACTIONS"
-                    ID_STATISTICS -> "STATISTICS"
-                    ID_ACCOUNT -> "ACCOUNT"
-                    else -> ""
+                  when (it.id) {
+                    ID_HOME -> mainViewPager.currentItem = 0
+                    ID_TRANSACTIONS -> mainViewPager.currentItem = 1
+                    ID_STATISTICS -> mainViewPager.currentItem = 2
+                    ID_ACCOUNT -> mainViewPager.currentItem = 3
                 }
             }
 

@@ -6,15 +6,39 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
+import androidx.viewpager2.widget.ViewPager2
 import com.simform.custombottomnavigation.SSCustomBottomNavigation
 import com.vneuron.bhbankexample.R
+import com.vneuron.bhbankexample.utils.ZoomOutPageTransformer
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupViewPager2()
         setupBottomNavigationView()
+    }
+
+    private fun setupViewPager2() {
+        val mAdapter = MainViewPager2Adapter(supportFragmentManager, lifecycle)
+        mainViewPager.apply {
+            orientation = ViewPager2.ORIENTATION_HORIZONTAL
+            adapter = mAdapter
+            setPageTransformer(ZoomOutPageTransformer())
+            registerOnPageChangeCallback(
+                object : ViewPager2.OnPageChangeCallback() {
+                    override fun onPageSelected(position: Int) {
+                        when (position){
+                            0 -> bottomNavigation.show(ID_HOME,true)
+                            1 -> bottomNavigation.show(ID_TRANSACTIONS,true)
+                            2 -> bottomNavigation.show(ID_STATISTICS,true)
+                            3 -> bottomNavigation.show(ID_ACCOUNT,true)
+                        }
+                    }
+                }
+            )
+        }
     }
 
     private fun setupBottomNavigationView() {
@@ -24,12 +48,12 @@ class MainActivity : AppCompatActivity() {
             add(SSCustomBottomNavigation.Model(ID_STATISTICS,R.drawable.ic_charts,"Statistics"))
             add(SSCustomBottomNavigation.Model(ID_ACCOUNT,R.drawable.ic_account,"Account"))
             setOnShowListener {
-                val name = when (it.id) {
-                    ID_HOME -> "Home"
-                    ID_TRANSACTIONS -> "Transactions"
-                    ID_STATISTICS -> "Statistics"
-                    ID_ACCOUNT -> "Account"
-                    else -> ""
+                when (it.id) {
+                    ID_HOME -> mainViewPager.setCurrentItem(0,true)
+                    ID_TRANSACTIONS -> mainViewPager.setCurrentItem(2,true)
+                    ID_STATISTICS -> mainViewPager.setCurrentItem(3,true)
+                    ID_ACCOUNT -> mainViewPager.setCurrentItem(4,true)
+                    else -> mainViewPager.setCurrentItem(0,true)
                 }
 
                 val bgColor = when (it.id) {
@@ -59,6 +83,8 @@ class MainActivity : AppCompatActivity() {
         bottomNavigation.show(0, true)
     }
 
+
+
     fun onFundTransferClicked(view: View) {}
     fun onLoansClicked(view: View) {}
     fun onDepositClicked(view: View) {}
@@ -68,8 +94,8 @@ class MainActivity : AppCompatActivity() {
 
     companion object{
         private const val ID_HOME = 0
-        private const val ID_TRANSACTIONS = 2
-        private const val ID_STATISTICS = 3
-        private const val ID_ACCOUNT = 4
+        private const val ID_TRANSACTIONS = 1
+        private const val ID_STATISTICS = 2
+        private const val ID_ACCOUNT = 3
     }
 }

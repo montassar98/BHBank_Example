@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.core.view.get
 import com.simform.custombottomnavigation.SSCustomBottomNavigation
 import com.vneuron.bhbankexample.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -55,6 +56,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(context, "item ${it.id} is reselected.", Toast.LENGTH_LONG).show()
             }
         }
+        bottomNavigation.show(0, true)
     }
 
     fun onFundTransferClicked(view: View) {}
@@ -65,7 +67,7 @@ class MainActivity : AppCompatActivity() {
     fun onOtherServicesClicked(view: View) {}
 
     companion object{
-        private const val ID_HOME = 1
+        private const val ID_HOME = 0
         private const val ID_TRANSACTIONS = 2
         private const val ID_STATISTICS = 3
         private const val ID_ACCOUNT = 4

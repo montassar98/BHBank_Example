@@ -26,6 +26,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hi, Montassar"
+                    android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
                     android:textSize="24sp" />
 
@@ -111,7 +112,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="your option"
+                    android:text="@string/your_options"
+                    android:textStyle="bold"
                     android:textSize="18sp" />
 
                 <View
@@ -379,10 +381,8 @@
         app:ss_waveHeight="7"
         app:ss_countBackgroundColor="@color/colorPrimaryDark"
         app:ss_countTextColor="#ffffff"
-        app:ss_countTypeface="fonts/graphik_semibold.ttf"
         app:ss_defaultIconColor="@android:color/white"
         app:ss_iconTextColor="@android:color/white"
-        app:ss_iconTextTypeface="fonts/graphik_semibold.ttf"
         app:ss_rippleColor="#2f424242"
         app:ss_iconTextSize="14sp"
         app:ss_selectedIconColor="@color/colorAccent"

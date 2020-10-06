@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BHBank Example</string>
+    <string name="your_password">Your Password</string>
+    <string name="your_phone">Your Phone</string>
+    <string name="or_scan_your_thumb_to_continue">Or scan your Thumb to continue</string>
+    <string name="todo">TODO</string>
 </resources>

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vneuron.bhbankexample.R
 import com.vneuron.bhbankexample.model.Card
+import com.vneuron.bhbankexample.utils.HorizontalSpaceItemDecoration
 import kotlinx.android.synthetic.main.fragment_account.*
 
 class AccountFragment: Fragment(), AccountContract.ViewInterface {
@@ -43,6 +44,7 @@ class AccountFragment: Fragment(), AccountContract.ViewInterface {
         cardsRecyclerView.apply {
             adapter = mAdapter
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+            addItemDecoration(HorizontalSpaceItemDecoration(700))
         }
         mAdapter.notifyDataSetChanged()
 

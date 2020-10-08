@@ -26,7 +26,7 @@
         app:ss_defaultIconColor="@android:color/white"
         app:ss_iconTextColor="@android:color/white"
         app:ss_rippleColor="#2f424242"
-        app:ss_iconTextSize="14sp"
+        app:ss_iconTextSize="10sp"
         app:ss_selectedIconColor="@color/colorAccent"
         android:elevation="10dp"
         app:ss_selectedIconTextColor="@color/colorAccent"

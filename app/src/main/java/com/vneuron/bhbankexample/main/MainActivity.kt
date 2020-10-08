@@ -84,12 +84,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    fun onFundTransferClicked(view: View) {}
-    fun onLoansClicked(view: View) {}
-    fun onDepositClicked(view: View) {}
-    fun onATMLocationsClicked(view: View) {}
-    fun onAccountStatementClicked(view: View) {}
-    fun onOtherServicesClicked(view: View) {}
+
 
     companion object{
         private const val ID_HOME = 0

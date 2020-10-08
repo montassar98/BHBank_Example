@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.vneuron.bhbankexample.main.fragments.AccountFragment
+import com.vneuron.bhbankexample.main.fragments.account.AccountFragment
 import com.vneuron.bhbankexample.main.fragments.HomeFragment
 import com.vneuron.bhbankexample.main.fragments.StatisticsFragment
 import com.vneuron.bhbankexample.main.fragments.TransactionsHistoryFragment

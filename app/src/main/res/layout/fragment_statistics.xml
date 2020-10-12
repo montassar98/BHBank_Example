@@ -15,4 +15,13 @@
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/txtStatistics"
         android:textSize="24sp"/>
+
+    <com.yabu.livechart.view.LiveChart
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="60dp"
+        android:id="@+id/live_chart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

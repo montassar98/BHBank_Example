@@ -6,7 +6,7 @@ class AccountPresenter(private val view:AccountContract.ViewInterface) : Account
 
 
     override fun retrieveCardsData() {
-        val cards:MutableList<Card> = emptyList<Card>() as MutableList<Card>
+        val cards:MutableList<Card> = mutableListOf<Card>()
         cards.add(Card(1,"Selmi Montassar", "**** **** **** 1256", "12/22",245))
         cards.add(Card(1,"Selmi Montassar", "**** **** **** 1256", "12/22",245))
         cards.add(Card(1,"Selmi Montassar", "**** **** **** 1256", "12/22",245))

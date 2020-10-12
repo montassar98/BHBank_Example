@@ -1,20 +1,20 @@
 package com.vneuron.bhbankexample.main.fragments.account
 
-import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager2.widget.ViewPager2
+import androidx.recyclerview.widget.PagerSnapHelper
 import com.vneuron.bhbankexample.R
 import com.vneuron.bhbankexample.model.Card
-import com.vneuron.bhbankexample.utils.HorizontalSpaceItemDecoration
-import com.vneuron.bhbankexample.utils.ZoomOutPageTransformer
+import com.vneuron.bhbankexample.utils.DotsIndicatorDecoration
 import kotlinx.android.synthetic.main.fragment_account.*
+
 
 class AccountFragment: Fragment(), AccountContract.ViewInterface {
 
@@ -44,8 +44,21 @@ class AccountFragment: Fragment(), AccountContract.ViewInterface {
         mAdapter = CardRVAdapter(context!!, cards)
         cardsRecyclerView.apply {
             adapter = mAdapter
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
-            addItemDecoration(HorizontalSpaceItemDecoration(700))
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            //addItemDecoration(HorizontalSpaceItemDecoration(700))
+            val radius = 10
+            val dotsHeight = 20
+            val color = ContextCompat.getColor(context, R.color.colorPrimary)
+            addItemDecoration(
+                DotsIndicatorDecoration(
+                    radius,
+                    radius * 4,
+                    dotsHeight,
+                    color,
+                    color
+                )
+            )
+            PagerSnapHelper().attachToRecyclerView(this)
         }
         mAdapter.notifyDataSetChanged()
 

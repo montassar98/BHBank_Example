@@ -24,13 +24,187 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/cardsRecyclerView"
         android:layout_margin="11dp"/>
-    <androidx.recyclerview.widget.RecyclerView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/optionsRecyclerView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardsRecyclerView"/>
+        app:layout_constraintTop_toBottomOf="@id/cardsRecyclerView"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:clickable="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="60dp"
+            android:onClick="onDisableCardClicked"
+            android:focusable="true"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="60dp"
+                android:contentDescription="@string/todo"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_disable"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Disable your Card"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="you can enable it later"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:clickable="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="60dp"
+            android:onClick="onViewPinClicked"
+            android:focusable="true"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="60dp"
+                android:contentDescription="@string/todo"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_view_pin"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View PIN"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="protect your pin"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:clickable="true"
+            android:paddingStart="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="onSecurityClicked"
+            android:focusable="true"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="60dp"
+                android:contentDescription="@string/todo"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_security"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Security"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="enable additional security"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:clickable="true"
+            android:paddingStart="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="onLimitClicked"
+            android:focusable="true"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="60dp"
+                android:contentDescription="@string/todo"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_limit"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Limit"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="set monthly limit spending"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:clickable="true"
+            android:paddingStart="60dp"
+            android:onClick="onCardSettingsClicked"
+            android:focusable="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="60dp"
+                android:contentDescription="@string/todo"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_card_settings"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Card Settings"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="credit card information"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

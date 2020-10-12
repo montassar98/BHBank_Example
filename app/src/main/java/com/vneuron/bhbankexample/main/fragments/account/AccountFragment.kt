@@ -81,6 +81,28 @@ class AccountFragment: Fragment(), AccountContract.ViewInterface {
         displayMessage(message = error)
     }
 
+    fun onDisableCardClicked(view: View){
+        Log.d(TAG, "onDisableCardClicked ")
+
+    }
+    fun onViewPinClicked(view: View){
+        Log.d(TAG, "onViewPinClicked")
+
+    }
+    fun onSecurityClicked(view: View){
+        Log.d(TAG, "onSecurityClicked")
+
+    }
+    fun onLimitClicked(view: View){
+        Log.d(TAG, "onLimitClicked")
+
+    }
+    fun onCardSettingsClicked(view: View){
+        Log.d(TAG, "onCardSettingsClicked")
+
+    }
+
+
     companion object{
         private const val TAG = "AccountFragment"
     }

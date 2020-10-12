@@ -3,8 +3,8 @@ package com.vneuron.bhbankexample.main.fragments.account
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -14,9 +14,10 @@ import com.vneuron.bhbankexample.R
 import com.vneuron.bhbankexample.model.Card
 import com.vneuron.bhbankexample.utils.DotsIndicatorDecoration
 import kotlinx.android.synthetic.main.fragment_account.*
+import android.view.View as View
 
 
-class AccountFragment: Fragment(), AccountContract.ViewInterface {
+class AccountFragment: Fragment(), AccountContract.ViewInterface, View.OnClickListener {
 
     private lateinit var presenter: AccountPresenter
     private lateinit var mAdapter: CardRVAdapter
@@ -25,11 +26,35 @@ class AccountFragment: Fragment(), AccountContract.ViewInterface {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View? = inflater.inflate(R.layout.fragment_account, container, false)
+        val view= inflater.inflate(R.layout.fragment_account, container, false)
         initPresenter()
+        /** init listeners */
+        view.findViewById<LinearLayout>(R.id.disableCard).setOnClickListener(onDisableCardClicked)
+        view.findViewById<LinearLayout>(R.id.viewPin).setOnClickListener(onViewPinClicked)
+        view.findViewById<LinearLayout>(R.id.Security).setOnClickListener(onSecurityClicked)
+        view.findViewById<LinearLayout>(R.id.limit).setOnClickListener(onLimitClicked)
+        view.findViewById<LinearLayout>(R.id.cardSettings).setOnClickListener(onCardSettingsClicked)
+        /******************/
 
             return view
     }
+
+    private val onDisableCardClicked = View.OnClickListener {
+        Log.d(TAG, "onDisableCardClicked")
+    }
+    private val onViewPinClicked = View.OnClickListener {
+        Log.d(TAG, "onViewPinClicked")
+    }
+    private val onSecurityClicked = View.OnClickListener {
+        Log.d(TAG, "onSecurityClicked")
+    }
+    private val onLimitClicked = View.OnClickListener {
+        Log.d(TAG, "onLimitClicked")
+    }
+    private val onCardSettingsClicked = View.OnClickListener {
+        Log.d(TAG, "onCardSettingsClicked")
+    }
+
     private fun initPresenter(){
         presenter = AccountPresenter(this)
     }
@@ -81,29 +106,24 @@ class AccountFragment: Fragment(), AccountContract.ViewInterface {
         displayMessage(message = error)
     }
 
-    fun onDisableCardClicked(view: View){
-        Log.d(TAG, "onDisableCardClicked ")
-
-    }
-    fun onViewPinClicked(view: View){
-        Log.d(TAG, "onViewPinClicked")
-
-    }
-    fun onSecurityClicked(view: View){
-        Log.d(TAG, "onSecurityClicked")
-
-    }
-    fun onLimitClicked(view: View){
-        Log.d(TAG, "onLimitClicked")
-
-    }
-    fun onCardSettingsClicked(view: View){
-        Log.d(TAG, "onCardSettingsClicked")
-
-    }
 
 
     companion object{
         private const val TAG = "AccountFragment"
+    }
+
+    override fun onClick(p0: View?) {
+        val id:Int? = p0?.id
+        displayMessage("onClick")
+        when(id){
+            R.id.disableCard -> {
+                displayMessage("disable card")
+                Log.d(TAG, "onClick: disable card")
+            }
+            R.id.viewPin  -> displayMessage("view pin")
+            R.id.Security  -> displayMessage("security")
+            R.id.limit  -> displayMessage("limit")
+            R.id.cardSettings  -> displayMessage("card settings")
+        }
     }
 }

@@ -9,7 +9,7 @@
         android:text="@string/account"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:layout_margin="11dp"
+        android:layout_margin="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -41,8 +41,8 @@
             android:clickable="true"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:paddingStart="60dp"
-            android:onClick="onDisableCardClicked"
+            android:paddingStart="50dp"
+            android:id="@+id/disableCard"
             android:focusable="true"
             android:layout_height="wrap_content"
             >
@@ -76,8 +76,8 @@
             android:clickable="true"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:paddingStart="60dp"
-            android:onClick="onViewPinClicked"
+            android:paddingStart="50dp"
+            android:id="@+id/viewPin"
             android:focusable="true"
             android:layout_height="wrap_content">
             <ImageView
@@ -108,10 +108,10 @@
             android:orientation="horizontal"
             android:gravity="start"
             android:clickable="true"
-            android:paddingStart="60dp"
+            android:paddingStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:onClick="onSecurityClicked"
+            android:id="@+id/Security"
             android:focusable="true"
             android:layout_height="wrap_content">
             <ImageView
@@ -142,10 +142,10 @@
             android:orientation="horizontal"
             android:gravity="start"
             android:clickable="true"
-            android:paddingStart="60dp"
+            android:paddingStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:onClick="onLimitClicked"
+            android:id="@+id/limit"
             android:focusable="true"
             android:layout_height="wrap_content">
             <ImageView
@@ -176,8 +176,8 @@
             android:orientation="horizontal"
             android:gravity="start"
             android:clickable="true"
-            android:paddingStart="60dp"
-            android:onClick="onCardSettingsClicked"
+            android:paddingStart="50dp"
+            android:id="@+id/cardSettings"
             android:focusable="true"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"

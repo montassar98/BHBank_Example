@@ -7,7 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.vneuron.bhbankexample.main.fragments.account.AccountFragment
 import com.vneuron.bhbankexample.main.fragments.HomeFragment
 import com.vneuron.bhbankexample.main.fragments.StatisticsFragment
-import com.vneuron.bhbankexample.main.fragments.TransactionsHistoryFragment
+import com.vneuron.bhbankexample.main.fragments.transactions.TransactionsHistoryFragment
 
 class MainViewPager2Adapter(fragmentManager: FragmentManager, lifecycle: Lifecycle):FragmentStateAdapter(fragmentManager,lifecycle) {
     override fun getItemCount(): Int {

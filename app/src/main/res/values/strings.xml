@@ -6,4 +6,6 @@
     <string name="todo">TODO</string>
     <string name="your_options">Your Options</string>
     <string name="account">Account</string>
+    <string name="statistics">Statistics</string>
+    <string name="transactions">Transactions</string>
 </resources>

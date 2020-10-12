@@ -15,15 +15,16 @@
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/txtAccount"
         android:textSize="24sp"/>
-    <!--<androidx.recyclerview.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtAccount"
+        app:layout_constraintDimensionRatio="1:0.5"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/cardsRecyclerView"
-        android:layout_margin="11dp"/>-->
-    <androidx.viewpager2.widget.ViewPager2
+        android:layout_margin="11dp"/>
+    <!--<androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager2"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -33,6 +34,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtAccount"
-        />
+        /> -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

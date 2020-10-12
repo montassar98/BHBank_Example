@@ -19,8 +19,7 @@ import kotlinx.android.synthetic.main.fragment_account.*
 class AccountFragment: Fragment(), AccountContract.ViewInterface {
 
     private lateinit var presenter: AccountPresenter
-    //private lateinit var mAdapter: CardRVAdapter
-    private  var viewPager2: ViewPager2? = null
+    private lateinit var mAdapter: CardRVAdapter
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,7 +27,6 @@ class AccountFragment: Fragment(), AccountContract.ViewInterface {
     ): View? {
         val view: View? = inflater.inflate(R.layout.fragment_account, container, false)
         initPresenter()
-        viewPager2 = view?.findViewById<ViewPager2>(R.id.view_pager2)
 
             return view
     }
@@ -43,21 +41,21 @@ class AccountFragment: Fragment(), AccountContract.ViewInterface {
 
     override fun initCardRecyclerView(cards: List<Card>) {
         Log.d(TAG, "initCardRecyclerView: ")
-       /* mAdapter = CardRVAdapter(context!!, cards)
+        mAdapter = CardRVAdapter(context!!, cards)
         cardsRecyclerView.apply {
             adapter = mAdapter
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
             addItemDecoration(HorizontalSpaceItemDecoration(700))
         }
         mAdapter.notifyDataSetChanged()
-        */
 
-        val adapter = DotIndicatorPager2Adapter()
+
+       /* val adapter = DotIndicatorPager2Adapter()
         view_pager2.adapter = adapter
         val zoomOutPageTransformer = ZoomOutPageTransformer()
         viewPager2?.setPageTransformer { page, position ->
             zoomOutPageTransformer.transformPage(page, position)
-        }
+        }*/
 
 
     }
